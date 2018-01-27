@@ -133,9 +133,6 @@ if(!message.member.roles.some(r=>["CEO", "PR", "CMO"].includes(r.name)) ) {
         )
       )
     }
-    if (command === "uptime") {
-      message.channel.send ("**I'm alive!**\n" + Math.floor(client.uptime / 1000 / 60 / 60 / 24) + " days, " + Math.floor(client.uptime / 1000 / 60 / 60 ) + " hours, " + Math.floor(client.uptime / 1000 / 60 ) + " minutes, and " + Math.floor(client.uptime / 1000 ) + " seconds.")
-    }
     if (command === "eval") {
           if(message.author.id !== "345312965508988928") { return message.channel.send (`You do not have permission to use this, ${message.author}, you silly billy!`) };
 // Clean
