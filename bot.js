@@ -12,7 +12,7 @@ client.on('ready', () => {
     // This will trigger when the bot comes online.
     console.log(`${client.user.tag} Is Active!`);
     console.log(`----------------`);
-    client.user.setPresence({game: {name: `on ${client.guilds.size} servers | ${prefix}help`, type: 0}});
+    client.user.setPresence({game: {name: `${prefix}new | ${prefix}invite`, type: 0}});
 });
 
 client.on("guildCreate", guild => {
