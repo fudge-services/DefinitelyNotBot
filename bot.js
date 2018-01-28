@@ -112,11 +112,12 @@ if(!message.member.roles.some(r=>["CEO", "PR", "CMO"].includes(r.name)) ) {
   return message.reply ("You do not have permissions to use this command!")
   }
 }
-/*      let channel = client.channels.get('404636868861493268');
+      let channel = client.channels.get('404636868861493268');
       if (!channel) {
         return message.reply ("I couldn't find the channel")
       }
-      */
+      channel.send(`__**New Commision!**__\n\nAdded by ${message.author.tag}\n**Department(s):** ${departments}**Description:** ${description.join(' ')}`);
+
       if (!message.mentions.roles) {
         message.reply ("You need to mention a role!")
       }
@@ -125,10 +126,11 @@ if(!message.member.roles.some(r=>["CEO", "PR", "CMO"].includes(r.name)) ) {
         return;
       }
     let description = args.slice(message.mentions.roles.size);
+    let departments = message.mentions.roles.map().join(', ');
     let roles = message.mentions.roles.map(role =>
         role.members.map (member => {
                 if (member.user.bot) return;
-                member.send (`__**New Commision!**__\n\nAdded by ${message.author.tag}\n**Description:** ${description.join(' ')}`);
+                member.send (`__**New Commision!**__\n\nAdded by ${message.author.tag}\n**Department(s):** ${departments}**Description:** ${description.join(' ')}`);
             }
         )
       )
